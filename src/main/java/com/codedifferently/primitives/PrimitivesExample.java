@@ -7,10 +7,11 @@ public class PrimitivesExample {
      * @param args
      */
     public static void main(String[] args) {
-        // myNum = 9;
-        // myFloatNum = 8.99f;
-        //  myLetter = 'A';
-        //  myBool = false;
-        //  myText = "Hello World";
+        byte myNum = 9;
+        float myFloatNum = 8.99f;
+        char myLetter = 'A';
+        boolean  myBool = false;    //lives on the Stack
+        Boolean myBigBool = false;  //lives on the Heap
+        String myText = "Hello World";
     }
 }

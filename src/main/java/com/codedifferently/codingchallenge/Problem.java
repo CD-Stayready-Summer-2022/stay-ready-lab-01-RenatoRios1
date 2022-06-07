@@ -18,7 +18,24 @@ public class Problem {
      */
     public static Integer doubleXX(String x) {
 
-        return null;
+        //Iterate through the loop
+            //Grab the character at the current index currentChar
+            //if currentChar equals to x
+                //Grab character at next index, nextChar
+                //If nextChar is equal to currentChar
+                //Then xxCount++
+        int count = 0;
+        char currentChar;
+        char nextChar;
+
+        for(int i = 0; i< x.length()-1; i++){
+           currentChar = x.charAt(i);
+           nextChar = x.charAt(i+1);
+           if(currentChar == nextChar){
+               count++;
+           }
+        }
+        return count;
     }
 
 
@@ -36,8 +53,12 @@ public class Problem {
     mysteryExplosion("ab") --> "aab"
      */
     public static String mysteryExplosion(String word) {
-
-        return null;
+        int limit = word.length();
+        String tempStr = "";
+        for(int i = 0; i < limit+1; i++){
+            tempStr += word.substring(0, i);
+        }
+        return tempStr;
     }
 
 
@@ -55,8 +76,16 @@ public class Problem {
     topTeams([1, 2, 3, 4, 5]) --> false
      */
     public static Boolean topTeams(int[] team) {
-
-        return null;
+        int count = 0;
+        for(int i = 0; i < 4; i++){
+            if(team[i] == 9){
+                count++;
+            }
+        }
+        if(count == 1){
+            return true;
+        }
+        return false;
     }
 
 
@@ -74,9 +103,16 @@ public class Problem {
     xtinction("xabxxxcdx") --> "xabcdx"
      */
     public static String xtinction(String x) {
-
-
-        return null;
+        String tempStr = "";
+        tempStr += x.charAt(0); //always add the first letter
+        for(int i = 1; i < x.length()-1; i++){
+            if(x.charAt(i) != 'x'){
+                tempStr += x.charAt(i);
+            }
+        }
+        tempStr += x.charAt(x.length()-1);  //always add the last letter
+        System.out.println(tempStr);
+        return tempStr;
     }
 
 
@@ -95,7 +131,12 @@ public class Problem {
     agent667([6, 7, 2, 6]) --> 1
      */
     public static Integer agent667(int[] codes) {
-
-        return null;
+        int count = 0;
+        for(int i = 0; i < codes.length -1; i++){
+            if(codes[i] == 6 && (codes[i+1] == 6 || codes[i+1] == 7)){
+                count++;
+            }
+        }
+        return count;
     }
 }
